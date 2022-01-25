@@ -47,3 +47,31 @@ def solution(a, b):
     return all_day[sum(last_day[:a-1])+b-1]
 
 # print(solution(1, 20))
+
+
+# 프로그래머스 | 수박
+# https://programmers.co.kr/learn/courses/30/lessons/12922
+def solution(n):
+    answer = '' 
+    for i in range(n): 
+        if i % 2 == 0: 
+            answer += '수' 
+        else: 
+            answer += '박' 
+    
+    return answer
+
+# print(solution(3))
+
+
+# 프로그래머스 | 자릿수 더하기
+# https://programmers.co.kr/learn/courses/30/lessons/12931
+
+# 정수로 받은 값을 자릿수로 나눠 총합을 구한다.
+# 자릿수 구하기 map함수 사용
+# 총합 sum 함수 사용
+def solution(n):
+    return sum(map(int,str(n)))
+
+# a = 123
+# print(solution(a))
