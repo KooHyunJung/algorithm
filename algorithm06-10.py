@@ -62,3 +62,24 @@ def solution(s):
 # print(solution(a))
 
 
+# 프로그래머스 | 평균 구하기
+# https://programmers.co.kr/learn/courses/30/lessons/12944
+def solution(arr):
+    return sum(arr)/len(arr)
+
+
+# 프로그래머스 | 내적
+# https://programmers.co.kr/learn/courses/30/lessons/70128
+def solution(a, b):
+    answer = []
+    for i in range(len(a)):
+        answer.append(a[i] * b[i])
+    answer = sum(answer)
+    return answer
+
+def solution(a, b):
+    return sum([x*y for x, y in zip(a,b)])
+
+# a = [1,2,3,4]
+# b = [-3,-1,0,2]
+# print(solution(a, b))
