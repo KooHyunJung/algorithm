@@ -51,3 +51,33 @@ def solution(s):
 
 # a = "t tt t ttt"
 # print(solution(a))
+
+
+# 구름문제 | 문자열 공백 없애기
+# replace는 문자열을 변경하는 함수. 문자열 안에서 특정 문자를 새로운 문자로 변경하는 기능을 가지고 있다. 
+# 사용 방법은 '변수. replace(old, new, [count])' 형식으로 사용한다.
+# - old : 현재 문자열에서 변경하고 싶은 문자
+# - new: 새로 바꿀 문자
+# - count: 변경할 횟수. 횟수는 입력하지 않으면 old의 문자열 전체를 변경. 기본값은 전체를 의미하는 count=-1로 지정되어있다. 
+
+def Goorm(a):
+    return a.replace(" ", "")
+
+b = "  I am Goorm !   "
+print(Goorm(b))
+
+
+# 백준문제 | 크로아티아어
+# 수도코드
+# 입력값은 소문자와 크로아티아어묶음?으로 이루어져 있음.
+# 입력값과 크로아티아어 목록값 비교
+# 입력값에 있는 크로아티아어는 "a"로 변경
+# 문자열 길이 출력
+def baekjoon(b):
+    lang = ['c=','c-','dz=','d-','lj','nj','s=','z=']
+    for lang in lang:
+        b = b.replace(lang, 'a')
+    return len(b)
+
+b = "ljes=njak"
+print(baekjoon(b))
