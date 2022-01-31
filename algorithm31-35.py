@@ -24,7 +24,7 @@ def solution(N, stages):
     return d # [3,4,2,1,5]
 
 # 몇몇 테스트에서 [시간 초과] 
-# 위 스텝 1, 2를 하나로 묶어 코 작성
+# 스텝 1, 2를 하나로 묶어 코드 아래같이 수정
 def solution2(N, stages):
     answer = {} # {1: 0.125, 2: 0.42857142857142855, 3: 0.5, 4: 0.5, 5: 0.0}
     StageUser = len(stages)
@@ -40,15 +40,14 @@ def solution2(N, stages):
 
 # N = 5
 # stages = [2, 1, 2, 6, 2, 4, 3, 3]
-# # [3,4,2,1,5]
-# print(solution2(N, stages))
+# print(solution2(N, stages)) # [3,4,2,1,5]
 
 
 # 프로그래머스 | H-index
 # https://programmers.co.kr/learn/courses/30/lessons/42747
 # 수도코드
 # 위키백가, H-index = 계산 방법 오름차순 내림차순으로 비교해서 겹치는 숫자 return
-def solution3(citations):
+def solution(citations):
     answer = 0 
     citations.sort(reverse=True) # 내림차순 정렬 [6, 5, 3, 1, 0]
     for i in range(1,len(citations)+1): #오름차순1  2  3  4  5
@@ -56,5 +55,35 @@ def solution3(citations):
             answer = i
     return answer
 
-# citations = [3, 0, 6, 1, 5]
-# print(solution3(citations))
+# print(solution([3, 0, 6, 1, 5]))
+
+
+# 프로그래머스 | 모의고사
+# https://programmers.co.kr/learn/courses/30/lessons/42840
+# 수도코드
+# 찍는 pattern 변수 선언
+# 변수 pattern , 매개변수 answers 길이 동일하게 비교
+# 가장 많이 맞힌 사람만 return / 동점 오름차순으로 return
+# [ 1번 학생만 생각했을 때 ]
+def solution1(answers):
+    result = 0
+    pattern = [1,2,3,4,5]
+    for i in range(len(answers)):
+        if answers[i] == pattern[i%5]: 
+            result += 1
+    return result
+# pattern 요소 길이 10으로 통일했다가, 2번학생 패턴 달라져 수정.
+def solution(answers):
+    answer = []
+    result = [0, 0, 0]
+    pattern = [[1,2,3,4,5], [2,1,2,3,2,4,2,5], [3,3,1,1,2,2,4,4,5,5]]
+    for j in range(len(pattern)):
+        for i in range(len(answers)):
+            if answers[i] == pattern[j][i%(len(pattern[j]))]: 
+                result[j] += 1
+    for length, val in enumerate(result):
+    	if val == max(result):
+        	answer.append(length+1)
+    return answer
+
+#print(solution([1,3,2,4,2])) # [1,2,3]
