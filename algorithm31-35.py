@@ -87,3 +87,16 @@ def solution(answers):
     return answer
 
 #print(solution([1,3,2,4,2])) # [1,2,3]
+
+
+# 프로그래머스 | 문자열 내 p와 y의 개수
+# https://programmers.co.kr/learn/courses/30/lessons/12916
+# 수도코드
+# 문자열 s 전체를 소문자로 변경하고 p와 y의 개수를 비교
+def solution(s):
+    ss = s.lower()
+    if (ss.count("p")==0 and ss.count("y")==0) or ss.count("p") == ss.count("y"):
+        return True
+    else: return False
+
+#print(solution("Pyy"))
