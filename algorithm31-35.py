@@ -100,3 +100,27 @@ def solution(s):
     else: return False
 
 #print(solution("Pyy"))
+
+
+# 프로그래머스 | 콜라츠의 추측
+# https://programmers.co.kr/learn/courses/30/lessons/12943
+# 수도코드
+# count=0 선언
+# count<500까지 Whlie 반복문을 돌려준다
+# 짝수와 홀수 나눠 계산한 -> num==1: break, count==500이라도 num !=1: count = -1
+def solution(num):
+    count = 0
+    while count<500:
+        if num == 1: 
+            break
+        elif num % 2 ==0:
+            num = num // 2
+            count += 1
+        else:
+            num = (num * 3) +1
+            count += 1
+    if num !=1:
+        count = -1
+    return count
+
+# print(solution(2))
