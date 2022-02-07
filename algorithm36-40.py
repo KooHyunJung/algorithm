@@ -28,3 +28,40 @@ def solution(numbers):
     return str(int(answer))
 
 #print(solution([300, 30, 3]))
+
+
+# 프로그래머스 | 신고 결과 받기
+# https://programmers.co.kr/learn/courses/30/lessons/92334
+# 수도코드 
+# [나쁜유저]가 신고당한 횟수를 구한다
+# if [신고당한 횟수] == k(정지 기준): key값을 반환
+# [신고한 유저]가 받을 메일과 매칭 시켜준다
+def solution(id_list, report, k):
+    # [나쁜유저]가 신고당한 횟수를 구한다
+    re_report = set(report)
+    caution = {} #{'frodo': 2, 'neo': 2, 'muzi': 1}
+    for i in re_report:
+        a,b=i.split(" ") 
+        if caution is None:
+            caution[b]=1
+        elif b not in caution:
+            caution[b]=1
+        else: caution[b]+=1
+    # [신고당한 횟수] == k: key값 반환
+    num = [] #['frodo', 'neo']
+    for key,value in caution.items():
+        if value >= k:
+            num.append(key)
+    # [신고한 유저], num(나쁜유저) 매치시켜주기
+    userlist = [0] * len(id_list)
+    userdict = dict(zip(id_list, userlist)) #{'muzi': 2, 'frodo': 1, 'apeach': 1, 'neo': 0}
+    for i in re_report:
+        a, b = i.split(" ")
+        if b in num:
+            userdict[a] += 1
+    return list(userdict.values())
+
+# id_list = ["muzi", "frodo", "apeach", "neo"]
+# report = ["muzi frodo","apeach frodo","frodo neo","muzi neo","apeach muzi"]
+# k = 2
+# print(solution(id_list, report, k))
