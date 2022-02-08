@@ -79,3 +79,24 @@ def solution(price, money, count):
     return answer
 
 # print(solution(3,20,4))
+
+
+# 프로그래머스 | 완주하지 못한 선수
+# https://programmers.co.kr/learn/courses/30/lessons/42576
+# count가 메모리를 많이 쓴다
+# 효율성 테스트 실패 [시간초과]
+def sol(participant, completion):
+    answer = ''
+    for i in participant:
+        if participant.count(i) > completion.count(i):
+            answer += i
+            participant.remove(i)
+    return answer
+
+# 한 개의 리스트를 {요소:요소개수} 형태로 반환하는 collections 모듈 사용
+import collections
+def solution(participant, completion):
+    a = collections.Counter(participant) - collections.Counter(completion)
+    return list(a.keys())[0]
+
+# print(solution(["mislav", "stanko", "mislav", "ana"], ["stanko", "ana", "mislav"]))
