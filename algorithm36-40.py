@@ -100,3 +100,12 @@ def solution(participant, completion):
     return list(a.keys())[0]
 
 # print(solution(["mislav", "stanko", "mislav", "ana"], ["stanko", "ana", "mislav"]))
+
+
+# 프로그래머스 | 서울에서 김서방 찾기
+# https://programmers.co.kr/learn/courses/30/lessons/12919
+def solution(seoul):
+    a = seoul.index('Kim')
+    return f'김서방은 {a}에 있다'
+# 이렇게 작성하는 방법도 았다 > "김서방은 {}에 있다".format(seoul.index('Kim'))
+# print(solution(["Jane", "Kim"]))
