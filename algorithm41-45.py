@@ -38,3 +38,14 @@ def solution(strings, n):
     answer = dict(zip(strings,a))
     return list(dict(sorted(answer.items(), key=lambda x: x[1])).keys())
 #print(solution(["abce", "abcd", "cdx"], 2))
+
+
+# 프로그래머스 | 하샤드 수 
+# https://programmers.co.kr/learn/courses/30/lessons/12947
+# int를 str로 변경
+def solution(x):
+    answer = 0
+    for i in range(len(str(x))):
+        answer += int(str(x)[i])
+    return True if x % answer == 0 else False
+#print(solution(13))
