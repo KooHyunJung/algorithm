@@ -49,3 +49,21 @@ def solution(x):
         answer += int(str(x)[i])
     return True if x % answer == 0 else False
 #print(solution(13))
+
+
+# 프로그래머스 | 약수의 개수와 덧셈
+# https://programmers.co.kr/learn/courses/30/lessons/77884
+# 수도코드
+# 제곱수 약수의 개수는 항상 홀수이다. 따라서 num이 제곱수인지 판별.
+# math.sqrt() 제곱근을 반환하는 함수.
+# .is_integer() 5.0 정수 판별.
+import math
+def solution(left : int, right: int) -> int:
+    answer = 0
+    for num in range(left,right+1):
+        print(math.sqrt(num))
+        if math.sqrt(num).is_integer():
+            answer -= num
+        else: answer += num
+    return answer
+# print(solution(24,27))
