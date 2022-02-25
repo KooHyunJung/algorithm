@@ -29,7 +29,7 @@ def solution(numbers):
 # print(solution([1,2,3,4,6,7,8,0]))
 
 
-# 프로그래머스 | 문저욜 내 마음대로 정하기
+# 프로그래머스 | 문자열 내 마음대로 정하기
 # https://programmers.co.kr/learn/courses/30/lessons/12915
 def solution(strings, n):
     a = []
@@ -61,7 +61,6 @@ import math
 def solution(left : int, right: int) -> int:
     answer = 0
     for num in range(left,right+1):
-        print(math.sqrt(num))
         if math.sqrt(num).is_integer():
             answer -= num
         else: answer += num
