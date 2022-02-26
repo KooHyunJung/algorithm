@@ -12,3 +12,10 @@ def solution(s:str, n:int)->str:
         else: answer += s[i]
     return answer
 # print(solution("a B z", 4))
+
+
+# 프로그래머스 | 직사각형 별찍기
+# https://programmers.co.kr/learn/courses/30/lessons/12969
+a, b = map(int, input().strip().split(' '))
+for i in range(1,b+1):
+    print((i+(a-i)) * '*')
