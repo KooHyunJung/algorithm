@@ -19,3 +19,17 @@ def solution(s:str, n:int)->str:
 a, b = map(int, input().strip().split(' '))
 for i in range(1,b+1):
     print((i+(a-i)) * '*')
+
+
+# 프로그래머스 | 정수 제곱근 판별
+# https://programmers.co.kr/learn/courses/30/lessons/12934
+# math.sqrt() 제곱근을 반환하는 함수.
+# math.pow(n, m) n의 m승을 반환하는 함수. 
+import math
+def solution(n):
+    if math.sqrt(n).is_integer():
+        NewNum = math.sqrt(n) + 1
+        return int(math.pow(NewNum, 2))
+    else: return -1
+# print(solution(3))
+# print(solution(121))
