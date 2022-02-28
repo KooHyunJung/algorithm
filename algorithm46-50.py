@@ -33,3 +33,14 @@ def solution(n):
     else: return -1
 # print(solution(3))
 # print(solution(121))
+
+
+# 프로그래머스 | 숫자 문자열과 영단어
+# https://programmers.co.kr/learn/courses/30/lessons/81301
+def solution1(s):
+    NewStr = s
+    num = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
+    for index, alpanum in enumerate(num):
+        NewStr=NewStr.replace(alpanum,str(index))
+    return int(NewStr)
+# print(solution1("oneseven8eight"))
