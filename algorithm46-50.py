@@ -44,3 +44,12 @@ def solution1(s):
         NewStr=NewStr.replace(alpanum,str(index))
     return int(NewStr)
 # print(solution1("oneseven8eight"))
+
+
+# 프로그래머스 | 문자열 내림차순으로 배치하기
+# https://programmers.co.kr/learn/courses/30/lessons/12917
+def solution(s):
+    newS = sorted(s, reverse=True)
+    return ''.join(newS)
+# print(solution("Zbcdefg"))
+# 다른코드 - ''.join(sorted(s, reverse=True))
