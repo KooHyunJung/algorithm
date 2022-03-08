@@ -11,3 +11,10 @@ def solution(n, arr1, arr2):
         answer.append(b.replace('1','#'))
     return answer
 # print(solution(5, [9, 20, 28, 18, 11], [30, 1, 21, 17, 28]))
+
+
+# 프로그래머스 | 포켓몬
+# https://programmers.co.kr/learn/courses/30/lessons/1845
+def solution(ls):
+    return min(len(ls)/2, len(set(ls)))
+    
