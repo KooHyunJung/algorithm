@@ -18,3 +18,14 @@ def solution(n, arr1, arr2):
 def solution(ls):
     return min(len(ls)/2, len(set(ls)))
     
+
+# 프로그래머스 | 최대공약수와 최소공배수 
+# https://programmers.co.kr/learn/courses/30/lessons/12940
+# math.gcd(a, b, c, ...) 최대공배수 구하는 매소드
+# 또는 [유클리드 호제법] 사용하기
+from math import gcd
+def solution(n, m):
+    num1 = gcd(n, m)
+    num2 = n*m // gcd(n,m)
+    return [num1, num2]
+# print(solution(3, 12))
