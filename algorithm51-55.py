@@ -29,3 +29,21 @@ def solution(n, m):
     num2 = n*m // gcd(n,m)
     return [num1, num2]
 # print(solution(3, 12))
+
+
+# 프로그래머스 | 최소직사각형 
+# https://programmers.co.kr/learn/courses/30/lessons/86491
+# 수도코드: 각 변의 작은값 -> h, 큰값 -> w 
+def solution(sizes):
+    w = []
+    h = []
+    for i in sizes:
+        if i[0] > i[1]:
+            w.append(i[0])
+            h.append(i[1])
+        else: 
+            w.append(i[1])
+            h.append(i[0])
+    return sorted(w, reverse=True)[0] * sorted(h, reverse=True)[0]
+# print(solution([[10, 7], [12, 3], [8, 15], [14, 7], [5, 15]]))
+
