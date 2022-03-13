@@ -47,3 +47,17 @@ def solution(sizes):
     return sorted(w, reverse=True)[0] * sorted(h, reverse=True)[0]
 # print(solution([[10, 7], [12, 3], [8, 15], [14, 7], [5, 15]]))
 
+
+# 프로그래머스 | 로또의 최고 순위와 최저 순위
+# https://programmers.co.kr/learn/courses/30/lessons/77484
+def solution(lottos: list, win_nums: list)->list:
+    ranking = [6, 6, 5, 4, 3, 2, 1]
+    score = 0
+    zero = 0
+    for i in lottos:
+        if i ==0:
+            zero += 1
+        elif i in win_nums:
+            score += 1
+    return [ranking[score+zero], ranking[score]]
+# print(solution([44, 1, 0, 0, 31, 25], [31, 10, 45, 1, 6, 19]))
