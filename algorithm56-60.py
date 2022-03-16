@@ -44,3 +44,22 @@ def solution(phone_book):
                 answer = False
     return answer
 # print(solution(["12","123","1235","567","88"]))
+
+
+# 프로그래머스 | 프린터
+# https://programmers.co.kr/learn/courses/30/lessons/42587
+def solution(priorities, location):
+    # value, index 튜플로 묶어 리스트로 만들어준다
+    d = [(v,i) for i,v in enumerate(priorities)]
+    answer = 0
+
+    while len(d): # location까지 앞에서부터 비교
+      items = d.pop(0)
+      if d and max(d)[0] > items[0]:
+          d.append(items)
+      else:
+          answer += 1
+          if items[1] == location:
+              break
+    return answer
+# print(solution([1, 1, 9, 1, 1], 1))
