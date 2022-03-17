@@ -63,3 +63,20 @@ def solution(priorities, location):
               break
     return answer
 # print(solution([1, 1, 9, 1, 1], 1))
+
+
+# 백준 | 사칙연산
+# https://www.acmicpc.net/problem/10869
+a, b = 7, 3
+answer = [a + b, abs(a - b), a * b, a // b, a % b]
+for i in answer:
+    print(i)
+
+
+# 백준 | 곱셈
+# https://www.acmicpc.net/problem/2588
+a, b = 472, 385
+print(a*(b%10))
+print(a*((b%100)//10))
+print(a*(b//100))
+print(a*b)
