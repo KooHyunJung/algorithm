@@ -49,3 +49,38 @@ for i in range(1, 10001):
 self_num = sorted(num1 - num2)
 for i in self_num:
     print(i)
+
+
+# 백준 | 단어 공부 
+# https://www.acmicpc.net/problem/1157
+# collections.Counter(list) 리스트 내 요소 개수 Counter 딕셔너리 형태로 반한
+import collections
+def baek(a):
+    alpha = dict(collections.Counter(list(a.upper())))
+    alpha2 = sorted(alpha.items(), key=lambda x:x[1], reverse=True)
+    realpha = ""
+    num = 0
+    for keyy, vall in alpha2:
+        if num == 0:
+            num += vall
+            realpha += keyy
+        elif num == vall:
+            return "?"
+        else:
+            return realpha
+# print(baek("Mississipi"))
+
+
+# 백준 | 그룹 단어 체커
+# https://www.acmicpc.net/problem/1316
+N = int(input())
+result = N
+for i in range(0,N):
+    word=input()
+    for j in range(0,len(word)-1):
+        if word[j]==word[j+1]: # 앞 뒤로 같으면 pass
+            pass
+        elif word[j] in word[j+1:]: # 앞 뒤가 같지 않고, 지금 위치 뒤로 같은 요소가 있으면 -1
+            result-=1
+            break
+print(result)
