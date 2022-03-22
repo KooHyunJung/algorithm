@@ -84,3 +84,37 @@ for i in range(0,N):
             result-=1
             break
 print(result)
+
+
+# 백준 | 설탕 배달
+# https://www.acmicpc.net/problem/2839
+def baekjoon(sugar):
+    count = 0
+    while True :
+        if sugar % 5 == 0 :
+            count += sugar // 5
+            return count  
+        sugar -= 3
+        count += 1 
+        
+        if sugar <= 0 :
+            return -1
+# print(baekjoon(4))
+
+
+# 백준 | Fly me to the Alpha Centauri
+# https://www.acmicpc.net/problem/1011
+t = int(input())
+
+for _ in range(t):
+    x, y = map(int,input().split())
+    distance = y - x
+    count = 0  # 이동 횟수
+    move = 1  # count별 이동 가능한 거리
+    move_plus = 0  # 이동한 거리의 합
+    while move_plus < distance :
+        count += 1
+        move_plus += move  # count 수에 해당하는 move를 더함
+        if count % 2 == 0 :  # count가 2의 배수일 때, 
+            move += 1  
+    print(count)
