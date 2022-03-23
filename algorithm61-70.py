@@ -118,3 +118,40 @@ for _ in range(t):
         if count % 2 == 0 :  # count가 2의 배수일 때, 
             move += 1  
     print(count)
+
+
+    # 백준 | 영화감독 숌
+# https://www.acmicpc.net/problem/1436
+def baekjoon(n):
+    count = 0
+    title = 666
+
+    while True:
+        if '666' in str(title):
+            count += 1
+        if count == n:
+            return title
+        title += 1
+# print(baekjoon(500))
+
+
+# 백준 | 달팽이는 올라가고 싶다
+# https://www.acmicpc.net/problem/2869
+# 아래 코드는 마지막 문제 시간초과
+def baekjoon(n):
+    day = 1
+    lang = 0
+    a, b, v = n
+    while True:
+        lang += a
+        if lang >= v:
+            return day
+        lang -= b
+        day += 1
+# math.ceil() 실수 올림 하여 정수를 반환하는 함수
+import math
+def baekjoon2(n):
+    a, b, v = n
+    day = math.ceil((v-a)/(a-b)) + 1
+    return day
+# print(baekjoon2([100, 99, 1000000000]))
