@@ -52,3 +52,28 @@ M, N = map(int, input().split())
 for i in range(M, N + 1):
     if isPrime(i):
         print(i)
+
+
+
+# 백준 | 나무 자르기
+# https://www.acmicpc.net/problem/2805
+# 이분탐색(binary search)
+def baekjoon_tree(a, tree):
+    N, M = a
+    tree.sort()
+
+    h = 0
+    start =0
+    end = tree[-1]
+    while start<=end:
+        s = 0
+        middle = (start + end) // 2
+        s = sum(i-middle if i > middle else 0 for i in tree)
+
+        if s >= M:
+            h = middle
+            start = middle + 1
+        else:
+            end = middle - 1
+    return h
+# print(baekjoon_tree([4, 7], [20, 15, 10, 17]))
