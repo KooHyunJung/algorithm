@@ -77,3 +77,71 @@ def baekjoon_tree(a, tree):
             end = middle - 1
     return h
 # print(baekjoon_tree([4, 7], [20, 15, 10, 17]))
+
+
+
+# 백준 | 스택
+# https://hwiyong.tistory.com/185
+# 적응 안되는 input으로 알고리즘 문제 풀기..
+import sys
+
+def push(x):
+    stack.append(x)
+def pop():
+    return -1 if(not stack) else stack.pop()
+def size():
+    return len(stack)
+def empty():
+    return 0 if stack else 1
+def top():
+    return stack[-1] if stack else -1
+
+N = int(sys.stdin.readline().rstrip())
+stack = []
+for _ in range(N):
+    input_split = sys.stdin.readline().rstrip().split()
+
+    order = input_split[0]
+
+    if order == "push":
+        push(input_split[1])
+    elif order == "pop":
+        print(pop())
+    elif order == "size":
+        print(size())
+    elif order == "empty":
+        print(empty())
+    elif order == "top":
+        print(top())
+
+
+# 백준 | 제로
+# https://www.acmicpc.net/problem/10773
+# 프로그래머스처럼 함수로 풀기
+def baekjoon(a):
+    answer = []
+    for i in a:
+        if i == 0:
+            answer.remove(answer[-1])
+        else:
+            answer.append(i)
+    return sum(answer)
+# print(baekjoon([1,3,5,4,0,0,7,0,0,6]))
+
+
+# 백준 | 괄호
+# https://www.acmicpc.net/problem/9012
+# 프로그래머스처럼 함수로 풀기
+def baekjoon(a):
+    answer = 0
+    replace_a = a.replace("()","")
+    if replace_a[-1] == "(":
+        return "NO"
+    for one_a in replace_a:
+        if one_a == ")":
+            answer += 1
+        elif one_a == "(":
+            answer -= 1
+    
+    return "YES" if answer==0 else "NO"
+# print(baekjoon("()()()()(()()())()"))
