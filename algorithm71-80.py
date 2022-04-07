@@ -47,7 +47,7 @@ def isPrime(num):
             if num % i == 0:
                 return False
         return True
- 
+        
 M, N = map(int, input().split())
 for i in range(M, N + 1):
     if isPrime(i):
@@ -145,3 +145,32 @@ def baekjoon(a):
     
     return "YES" if answer==0 else "NO"
 # print(baekjoon("()()()()(()()())()"))
+
+
+# 백준 | 최소공배수
+# https://www.acmicpc.net/problem/1934
+# 메소드 사용안하고, 함수로 변형해서 풀기.
+def least_common_multiple(a: int, b: int)-> int:
+    for i in range(max(a,b),(a*b)+1):
+        if i%a==0 and i%b==0:
+            return i
+# print(least_common_multiple(6,10))
+
+
+# 백준 | 이항 계수 1 | 다리 놓기
+# https://www.acmicpc.net/problem/11050
+# 이항계수(Binomial Coefficient) 주어진 크기 집합에서 원하는 개수만큼 순서없이 뽑는 조합의 가짓수
+# 이항 - 하나의 아이템에 대해서는 ‘뽑거나, 안 뽑거나’ 두 가지의 선택만이 있기 때문
+def binomial_coefficient(n, r):
+    cache = [[0 for _ in range(r+1)] for _ in range(n+1)]
+
+    for i in range(n+1):
+        cache[i][0] = 1
+    for i in range(r+1):
+        cache[i][i] = 1
+
+    for i in range(1, n+1):
+        for j in range(1, r+1):
+            cache[i][j] = cache[i-1][j] + cache[i-1][j-1]
+    return cache[n][r]
+# print(binomial_coefficient(29,13))
