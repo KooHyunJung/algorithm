@@ -52,3 +52,32 @@ def deque1(n: int, index: list)-> int:
                     count += 1
     return count
 # print(deque1(10,[2,9,5]))
+
+
+# 백준 | 통계학
+# https://www.acmicpc.net/problem/2108
+# 함수로 변형해서 풀이
+# Counter(N).most_common() -> .most_common() : N의 요소 중 개수가 많은 순으로 정렬된 배열 리턴
+from collections import Counter
+def baekjoon(N: list)->list:
+    N.sort()
+    # 산술평균
+    arithmetic_mean = round(sum(N)/len(N))
+    # 중앙값
+    median = N[int((len(N)-1)/2)]
+    # 최빈값
+    mode = 0
+    count = Counter(N).most_common() # .most_common(3) 개수 지정도 가능
+    if len(count) > 1:
+        if count[0][1] == count[1][1]:
+            mode += count[1][0]
+        else:
+            mode += count[0][0]
+    else:
+        mode + count[0][0]
+    # 범위
+    range = N[-1] - N[0]
+
+    result = [arithmetic_mean, median, mode, range]
+    return result
+print(baekjoon([1,3,8,-2,2]))
