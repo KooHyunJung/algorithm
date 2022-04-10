@@ -57,6 +57,7 @@ def deque1(n: int, index: list)-> int:
 # 백준 | 통계학
 # https://www.acmicpc.net/problem/2108
 # 함수로 변형해서 풀이
+# round() : 파이썬 반올림 함수
 # Counter(N).most_common() -> .most_common() : N의 요소 중 개수가 많은 순으로 정렬된 배열 리턴
 from collections import Counter
 def baekjoon(N: list)->list:
@@ -80,4 +81,4 @@ def baekjoon(N: list)->list:
 
     result = [arithmetic_mean, median, mode, range]
     return result
-print(baekjoon([1,3,8,-2,2]))
+# print(baekjoon([1,3,8,-2,2]))
