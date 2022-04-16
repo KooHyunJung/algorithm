@@ -82,3 +82,9 @@ def baekjoon(N: list)->list:
     result = [arithmetic_mean, median, mode, range]
     return result
 # print(baekjoon([1,3,8,-2,2]))
+
+
+# 백준 | 색종이 만들기
+# https://www.acmicpc.net/problem/2630
+def baekjoon():
+    return 0
