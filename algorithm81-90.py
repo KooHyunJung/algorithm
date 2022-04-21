@@ -86,5 +86,35 @@ def baekjoon(N: list)->list:
 
 # 백준 | 색종이 만들기
 # https://www.acmicpc.net/problem/2630
-def baekjoon():
-    return 0
+# 분할 정복 : 그대로 해결할 수 없는 문제를 작은 문제로 분할하여 문제를 해결하는 방법으로
+# 재귀적으로 자신을 호출하면서 그 연산의 단위를 조금씩 줄어가는 방식이다.
+import sys
+
+N = int(sys.stdin.readline())
+piece = [list(map(int,sys.stdin.readline().split())) for _ in range(N)]
+
+white = 0
+blue = 0
+
+def division(x, y, n):
+    global blue, white
+    check = piece[x][y]
+    for i in range(x, x+n):
+        for j in range(y, y+n):
+            if check != piece[i][j]:
+                division(x,y,n//2) # 1
+                division(x,y+n//2,n//2) # 2
+                division(x+n//2,y,n//2) # 3
+                division(x+n//2,y+n//2,n//2) # 4
+                return
+    if check==0:
+        white+=1
+        return
+    else:  
+        blue+=1
+        return
+            
+division(0,0,N)
+print(white)
+print(blue)
+
