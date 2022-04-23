@@ -118,3 +118,19 @@ division(0,0,N)
 print(white)
 print(blue)
 
+
+# 프로그래머스 | 3진법 뒤집기
+# https://programmers.co.kr/learn/courses/30/lessons/68935
+# divmod(n, 3) : 매개변수로 두개의 숫자를 입력받아 몫과 나머지를 튜플로 반환, 파이썬 내장 함수.
+# int(value, base) : base진법 10진법으로 변환
+def solution(n):
+    answer = "" # 반전 상태로 저장
+    while True:
+        n, rest = divmod(n, 3)
+        answer += str(rest)
+
+        if n == 0:
+            break
+    
+    return int(answer, 3)
+# print(solution(45))
