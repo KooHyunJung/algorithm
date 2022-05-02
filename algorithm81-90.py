@@ -134,3 +134,7 @@ def solution(n):
     
     return int(answer, 3)
 # print(solution(45))
+
+
+# 프로그래머스 | 신규아이디 추천
+# https://programmers.co.kr/learn/courses/30/lessons/72410
