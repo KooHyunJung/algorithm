@@ -138,3 +138,16 @@ def solution(n):
 
 # 프로그래머스 | 신규아이디 추천
 # https://programmers.co.kr/learn/courses/30/lessons/72410
+# 정규표현식 사용
+import re
+def solution(new_id):
+    re_id = new_id
+    re_id = re_id.lower()
+    re_id = re.sub('[^a-z0-9\-_.]', '', re_id)
+    re_id = re.sub('\.+', '.', re_id)
+    re_id = re.sub('^[.]|[.]$', '', re_id)
+    re_id = 'a' if len(re_id) == 0 else re_id[:15]
+    re_id = re.sub('^[.]|[.]$', '', re_id)
+    re_id = re_id if len(re_id) > 2 else re_id + "".join([re_id[-1] for i in range(3-len(re_id))])
+    return re_id
+# print(solution("abcdefghijklmn"))
