@@ -151,3 +151,27 @@ def solution(new_id):
     re_id = re_id if len(re_id) > 2 else re_id + "".join([re_id[-1] for i in range(3-len(re_id))])
     return re_id
 # print(solution("abcdefghijklmn"))
+
+
+# 프로그래머스 | [1차] 다트게임
+# https://programmers.co.kr/learn/courses/30/lessons/17682
+# 스택으로 문제 풀기
+def solution(dartResult):
+    answer = []
+    dartResult = dartResult.replace("10", "A")
+    bonus = {'S': 1, 'D': 2, 'T': 3}
+    for i in dartResult:
+        if i.isdigit() or i=='A':
+            answer.append(10 if i == 'A' else int(i))
+        elif i in ('S', 'D', 'T'):
+            num = answer.pop()
+            answer.append(num ** bonus[i])
+        elif i == '#':
+            answer[-1] *= -1
+        elif i == '*':
+            num = answer.pop()
+            if len(answer):
+                answer[-1] *= 2
+            answer.append(2 * num)
+    return sum(answer)
+# print(solution("1D#2S*3S"))
