@@ -175,3 +175,39 @@ def solution(dartResult):
             answer.append(2 * num)
     return sum(answer)
 # print(solution("1D#2S*3S"))
+
+
+# 프로그래머스 | 키패드 누르기
+# https://programmers.co.kr/learn/courses/30/lessons/67256
+# 절대값 abs(값)
+# 몫과 나머지 divmod( , )
+def solution(numbers: list, hand: str)-> str:
+    answer = ""
+    L = [1,4,7]
+    R = [3,6,9]
+    right = 10 # 오른손 위치
+    left = 12 #왼손 위치
+    for i in numbers:
+        if i in L:
+            answer+= "L"
+            left = i
+        elif i in R:
+            answer+= "R"
+            right = i
+        else:
+            i = 11 if i == 0 else i # 0자리에는 값 11을 부여한다
+            if sum(divmod(abs(i-right), 3)) > sum(divmod(abs(i-left), 3)): # 원소간 절대값을 구해 3으로 나눈 몫과 나머지를 더한 값 비교
+                answer+= "L"
+                left = i
+            elif sum(divmod(abs(i-right), 3)) < sum(divmod(abs(i-left), 3)):
+                answer+= "R"
+                right = i
+            else:
+                if hand == "right":
+                    answer+= "R"
+                    right = i
+                else:
+                    answer+= "L"
+                    left = i
+    return answer
+# print(solution([1, 3, 4, 5, 8, 2, 1, 4, 5, 9, 5],"right"))
