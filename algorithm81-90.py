@@ -211,3 +211,26 @@ def solution(numbers: list, hand: str)-> str:
                     left = i
     return answer
 # print(solution([1, 3, 4, 5, 8, 2, 1, 4, 5, 9, 5],"right"))
+
+
+# 프로그래머스 | 소수 만들기
+# https://programmers.co.kr/learn/courses/30/lessons/12977
+# is_prime_num(n) n 으로 구할 수 있지만, 시간복잡도 줄이기 -> int(math.sqrt(n))+1
+# list n조합 구하기 : combinations(list,n)
+import math
+from itertools import combinations
+# 소수 판별
+def is_prime_num(n: int)-> bool:
+    for i in range(2, int(math.sqrt(n))+1): # 반복 범위 줄이기
+        if n % i == 0:
+            return False
+    return True
+
+def solution(nums: list)-> int:
+    answer = 0
+    num = list(combinations(nums,3)) # nums배열 원소3개씩 조합한 list 생성
+    for i in num:
+        if is_prime_num(sum(i)):
+            answer += 1             
+    return answer
+    
