@@ -233,4 +233,7 @@ def solution(nums: list)-> int:
         if is_prime_num(sum(i)):
             answer += 1             
     return answer
-    
+
+
+# 프로그래머스 | N개의 최소공배수
+# https://programmers.co.kr/learn/courses/30/lessons/12953
