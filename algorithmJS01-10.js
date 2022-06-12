@@ -37,4 +37,12 @@ function solution2(s) {
         return s[answer];
     }    
 }
+// 삼항 연산자 사용
+function solution2(s) {
+    let s_length = s.length;
+    let answer = Math.floor(s.length / 2)  
+
+    return s_length %2 === 0 ? s.slice(answer-1,answer+1) : s[answer];
+}
 // console.log(solution2("abcd"));
+
