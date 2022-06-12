@@ -19,9 +19,22 @@ function solution1(n) {
     re_num = Array.from(re_num).reverse().map(x=>+x);
     return re_num
 }
-
-console.log(solution1(12345));
+// console.log(solution1(12345));
 
 
 // 프로그래머스 | 가운데 수 가져오기
 // https://programmers.co.kr/learn/courses/30/lessons/12903
+// Math.floor(숫자 or 연산) - 소수점 버림, 정수 반환
+// 배열.slice(n,m); - n ~ m-1까지 반환
+// 배열[0] - 인덱스 요소 반환
+function solution2(s) {
+    let s_length = s.length;
+    let answer = Math.floor(s.length / 2)
+    if (s_length %2 === 0) {
+        return s.slice(answer-1,answer+1);
+    }
+    else {
+        return s[answer];
+    }    
+}
+// console.log(solution2("abcd"));
