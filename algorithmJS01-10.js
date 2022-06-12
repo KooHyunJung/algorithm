@@ -46,3 +46,12 @@ function solution2(s) {
 }
 // console.log(solution2("abcd"));
 
+
+// 프로그래머스 |핸드폰 번호 가리기
+// https://programmers.co.kr/learn/courses/30/lessons/12948?language=python
+// "문자".repeat(n) - 문자를 n번 반복하는 메소드 ... 이런 거 보면 파이썬이 더 직관적인듯..
+function solution3(phone_number) {
+    var result = "*".repeat(phone_number.length - 4) + phone_number.slice(-4);
+    return result;
+}
+// console.log(solution3("01033334444"));
