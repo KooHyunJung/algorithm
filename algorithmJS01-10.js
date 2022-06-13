@@ -55,3 +55,16 @@ function solution3(phone_number) {
     return result;
 }
 // console.log(solution3("01033334444"));
+
+
+// 프로그래머스 | 나머지가 1이 되는 수 찾기
+//  https://programmers.co.kr/learn/courses/30/lessons/87389
+// 반복문, 조건문 사용 2 ~ n-1 사이에서 나머지가 1이 나오는 숫자 출력
+function solution4(n) {
+    for (var i = 2; i < n; i++) {
+        if (n % i === 1) {
+            return i;
+        }
+    }
+}
+// console.log(solution4(10));
