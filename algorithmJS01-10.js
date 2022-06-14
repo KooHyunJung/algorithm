@@ -68,3 +68,21 @@ function solution4(n) {
     }
 }
 // console.log(solution4(10));
+
+
+// 프로그래머스 | 나누어 떨어지는 숫자 배열
+// https://programmers.co.kr/learn/courses/30/lessons/12910
+// 파이썬에서는 for in 사용, 자스에서는 for문 배열 인덱스로 접근 
+// arr.sort((a,b)=>a-b); - 배열 오름차순 정렬
+// https://celltong.tistory.com/entry/JavaScript-sort-%EB%A9%94%EC%86%8C%EB%93%9C%EB%A1%9C-%EB%B0%B0%EC%97%B4-%EC%A0%95%EB%A0%AC%ED%95%98%EA%B8%B0
+function solution5(arr, divisor) {
+    let answer = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % divisor == 0) {
+            answer.push(arr[i]);
+        }
+        // if(arr[i] % divisor == 0) answer.push(arr[i]); 이렇게도 작성 가능
+    }
+    return answer.length == 0 ? [-1] : answer.sort((a,b)=>a-b);
+}
+// console.log(solution5([5, 9, 7, 10], 5));
