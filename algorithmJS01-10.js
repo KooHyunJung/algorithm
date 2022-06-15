@@ -86,3 +86,7 @@ function solution5(arr, divisor) {
     return answer.length == 0 ? [-1] : answer.sort((a,b)=>a-b);
 }
 // console.log(solution5([5, 9, 7, 10], 5));
+
+
+// 프로그래머스 | 같은 숫자는 싫어
+// https://programmers.co.kr/learn/courses/30/lessons/12906
