@@ -81,7 +81,7 @@ function solution5(arr, divisor) {
         if (arr[i] % divisor == 0) {
             answer.push(arr[i]);
         }
-        // if(arr[i] % divisor == 0) answer.push(arr[i]); 이렇게도 작성 가능
+        // if(arr[i] % divisor == 0) answer.push(arr[i]); // 이렇게도 작성 가능
     }
     return answer.length == 0 ? [-1] : answer.sort((a,b)=>a-b);
 }
@@ -90,3 +90,23 @@ function solution5(arr, divisor) {
 
 // 프로그래머스 | 같은 숫자는 싫어
 // https://programmers.co.kr/learn/courses/30/lessons/12906
+// js에도 set이 있다니 ..!
+// set만 사용하면 Set(2) { 4, 3 } 이렇게 출력되기에 
+// 리스트(배열)형태로 출력하도록 [...]로 감싸준다
+function solution66(arr) {
+    let re_arr = [...new Set(arr)];
+    return re_arr;
+} // 하지만 문제를 다시 읽어보니 이게 아니었으므로...
+function solution6(arr) {
+    let answer = [];
+    for(let i = 0; i < arr.length; i++) {
+        if(arr[i] !== arr[i+1]) {
+            answer.push(arr[i]);
+        }
+    }
+    return answer;
+}
+// function solution6(arr) {
+//     return arr.filter((val,index) => val != arr[index+1]);
+// }
+console.log(solution6([1,1,3,3,0,1,1]));
