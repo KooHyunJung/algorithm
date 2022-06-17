@@ -106,7 +106,22 @@ function solution6(arr) {
     }
     return answer;
 }
-// function solution6(arr) {
-//     return arr.filter((val,index) => val != arr[index+1]);
-// }
-console.log(solution6([1,1,3,3,0,1,1]));
+// 다른 사람 문제 풀이
+function solution6(arr) {
+    return arr.filter((val,index) => val != arr[index+1]);
+}
+// console.log(solution6([1,1,3,3,0,1,1]));
+// console.log(solution6([4,4,4,3,3]));
+
+
+// 프로그래머스 | 평균 구하기
+// https://programmers.co.kr/learn/courses/30/lessons/12944
+// 수도코드 : 배열.총합 / 배열.길이
+// python "sum" === js "arr.reduce()"
+// ES6문법 : arr.reduce((a, b) => a + b)
+// 나... 파이썬이 더 좋아...
+function solution7(arr) {
+    var arr_sum = arr.reduce(function(a, b){ return a + b; }, 0);
+    return arr_sum / arr.length;
+}
+console.log(solution7([1,2,3,4]))
