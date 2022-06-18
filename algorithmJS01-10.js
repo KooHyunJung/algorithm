@@ -124,4 +124,26 @@ function solution7(arr) {
     var arr_sum = arr.reduce(function(a, b){ return a + b; }, 0);
     return arr_sum / arr.length;
 }
-console.log(solution7([1,2,3,4]))
+// console.log(solution7([1,2,3,4]))
+
+
+// 프로그래머스 | 내적
+// https://programmers.co.kr/learn/courses/30/lessons/70128
+// 수도코드 
+// 반복문 arr1, arr2 같은 인덱스끼리 곱하기
+// 반복문 변수 answer 더하기
+function solution8(a, b) {
+    var answer = 0;
+    for(let i = 0; i < a.length; i++) {
+        answer += (a[i] * b[i]);
+    }
+    return answer;
+}
+// 다른 사람 풀이
+// reduce
+// https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
+// https://velog.io/@s_sangs/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%82%B4%EC%A0%81-JavaScript
+function solution8(a, b) {
+    return a.reduce((acc, _, i) => acc += a[i] * b[i], 0);
+}
+// console.log(solution8([1,2,3,4], [-3,-1,0,2]))
