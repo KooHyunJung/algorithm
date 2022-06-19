@@ -147,3 +147,14 @@ function solution8(a, b) {
     return a.reduce((acc, _, i) => acc += a[i] * b[i], 0);
 }
 // console.log(solution8([1,2,3,4], [-3,-1,0,2]))
+
+
+// 프로그래머스 | 제일 작은 수 제거하기
+// https://programmers.co.kr/learn/courses/30/lessons/12935
+// indexOf : https://hianna.tistory.com/379
+// splice : https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
+function solution9(arr) {
+    arr.splice(arr.indexOf(Math.min(...(arr), 1)));
+    return arr.length ? arr : [-1];
+} 
+// console.log(solution9([4,3,2,1]))
