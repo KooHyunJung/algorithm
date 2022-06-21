@@ -14,3 +14,23 @@ function solution(x, n) {
     return Array(n).fill(x).map((v, i) => (i + 1) * v)
 }
 // console.log(solution(-4, 2))
+
+
+
+// 프로그래머스 | 2016
+// https://programmers.co.kr/learn/courses/30/lessons/12901
+function solution1(a, b) {
+    const day = ["FRI","SAT","SUN","MON","TUE","WED","THU"];
+    const month = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+    var sum = b-1;
+
+    for (var i=0; i<a-1; i++){
+        sum += month[i];
+    }
+    return day[(sum%7)];
+}
+// Date 사용
+function solution1(a, b) {
+    return new Date(2016, a - 1, b).toString().slice(0,3).toUpperCase();
+}
+// console.log(solution1(5, 24))

@@ -27,7 +27,7 @@ def solution(arr):
 
 def solution(arr):
     return [i for i in arr if i > min(arr)]
-   
+
 # a = [4,3,2,1]
 # print(solution(a))
 
