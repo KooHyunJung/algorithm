@@ -34,3 +34,17 @@ function solution1(a, b) {
     return new Date(2016, a - 1, b).toString().slice(0,3).toUpperCase();
 }
 // console.log(solution1(5, 24))
+
+
+// 프로그래머스 | 수박
+// https://programmers.co.kr/learn/courses/30/lessons/12922
+// 수도코드
+// arr = 수박 * n.길이
+// arr.slice(0.n.길이)
+function solution2(n) {
+    const arr = "수박".repeat(n).slice(0,n);
+    return arr;
+}
+// 함수를 아래처럼 쓸 수 있음
+const solution2 = n => "수박".repeat(n).slice(0,n);
+console.log(solution2(3));
