@@ -46,5 +46,23 @@ function solution2(n) {
     return arr;
 }
 // 함수를 아래처럼 쓸 수 있음
-const solution2 = n => "수박".repeat(n).slice(0,n);
-console.log(solution2(3));
+// const solution2 = n => "수박".repeat(n).slice(0,n);
+// console.log(solution2(3));
+
+
+
+// 프로그래머스 | 자릿수 더하기
+// https://programmers.co.kr/learn/courses/30/lessons/12931
+// 정수 -> 문자열 -> 쪼개기 -> 정수 -> SUM
+function solution3(n) {
+    let answer = 0;
+    for (let i = 0; i < n.toString().length; i++) {
+        answer += Number(n.toString()[i]);
+    }
+    return answer;
+}
+// 다른 사람 풀이
+function solution3(n){
+    return (n+"").split("").reduce((acc, curr) => acc + parseInt(curr), 0)
+}
+// console.log(solution3(123));
