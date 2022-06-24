@@ -36,6 +36,7 @@ function solution1(a, b) {
 // console.log(solution1(5, 24))
 
 
+
 // 프로그래머스 | 수박
 // https://programmers.co.kr/learn/courses/30/lessons/12922
 // 수도코드
@@ -66,3 +67,16 @@ function solution3(n){
     return (n+"").split("").reduce((acc, curr) => acc + parseInt(curr), 0)
 }
 // console.log(solution3(123));
+
+
+
+// 프로그래머스 | 약수의 합
+// https://programmers.co.kr/learn/courses/30/lessons/12928
+function solution4(n) {
+    var answer = 0;
+    for (let i = 0; i < n+1; i++) {
+        if (n % i === 0) answer += i;
+    }
+    return answer;
+}
+// console.log(solution4(12));
