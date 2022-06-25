@@ -80,3 +80,19 @@ function solution4(n) {
     return answer;
 }
 // console.log(solution4(12));
+
+
+
+// 프로그래머스 | 두 개 뽑아 더하기
+// https://programmers.co.kr/learn/courses/30/lessons/68644
+function solution5(numbers) {
+    const newNum = []
+    for (let i = 0; i < numbers.length; i++) {
+        for (let j = i + 1; j < numbers.length; j++) {
+            newNum.push(numbers[i] + numbers[j])
+        }
+    }
+    const answer = [...new Set(newNum)]
+    return answer.sort((a, b) => a - b)
+}
+// console.log(solution5([2,1,3,4,1]));
