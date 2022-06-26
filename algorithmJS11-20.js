@@ -96,3 +96,21 @@ function solution5(numbers) {
     return answer.sort((a, b) => a - b)
 }
 // console.log(solution5([2,1,3,4,1]));
+
+
+
+// 백준문제 | 크로아티아어
+// https://www.acmicpc.net/problem/2941
+// 수도코드
+// 입력값과 크로아티아어 목록값 비교
+// 입력값에 있는 크로아티아어는 "a"로 변경
+// 문자열 길이 출력
+function solution6(input) {
+    let string = ['c=','c-','dz=','d-','lj','nj','s=','z='];
+    for (let str of string) {
+        input = input.split(str).join("a")
+    }
+    return input.length
+}
+let b = "ljes=njak"
+console.log(solution6(b))
