@@ -113,4 +113,14 @@ function solution6(input) {
     return input.length
 }
 let b = "ljes=njak"
-console.log(solution6(b))
+// console.log(solution6(b))
+
+
+
+// 구름문제 | 단어장 만들기
+// https://level.goorm.io/exam/148704/%EA%B8%B0%EB%B3%B8-%EB%8B%A8%EC%96%B4%EC%9E%A5-%EB%A7%8C%EB%93%A4%EA%B8%B0/quiz/1
+// 수도코드 : 배열 문자열 기준으로 오름차순 정렬, index[num-1] 찾기
+function solution7(arr, num) {
+    return arr.sort((x,y)=>x.length-y.length)[num-1]
+}
+// console.log(solution7(["a", "aa", "aaa", "b", "bb", "bbb"], 3))
