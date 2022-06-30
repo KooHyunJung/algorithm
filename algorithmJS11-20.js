@@ -124,3 +124,42 @@ function solution7(arr, num) {
     return arr.sort((x,y)=>x.length-y.length)[num-1]
 }
 // console.log(solution7(["a", "aa", "aaa", "b", "bb", "bbb"], 3))
+
+
+
+// 프로그래머스 | 이상한 문자 만들기
+// https://programmers.co.kr/learn/courses/30/lessons/12930
+// 수도코드 
+// 문자열 공백으로 나누기, 짝수 대문자/ 홀수 소문자, 변환 문자 전체 연결 출력
+function solution8(s) {
+    var answer2 = [];
+    let s_array = s.split(" ");
+    for (let i = 0; i < s_array.length; i++) {
+        let answer1 = '';
+        let for_array = s_array[i];
+        for (let j = 0; j < for_array.length; j++) {
+            if(j % 2 === 0) {
+                answer1 += for_array[j].toUpperCase();
+            }    
+            else {
+                answer1 += for_array[j].toLowerCase();
+            }
+        }
+        answer2.push(answer1);
+    }
+    return answer2.join(" ");
+}
+// 코드 정리
+function solution8(s) {
+    var answer = "";
+
+    for (let s_array of s.split(" ")) {
+        for (let i = 0; i < s_array.length; i++) {
+            answer +=[i % 2 ===0 ? s_array[i].toUpperCase() : s_array[i].toLowerCase()];
+        }
+        answer += " ";
+    }
+
+    return answer.slice(0,-1);
+}
+// console.log(solution8("aaa aaaa aaaaa"))
