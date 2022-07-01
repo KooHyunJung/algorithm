@@ -163,3 +163,13 @@ function solution8(s) {
     return answer.slice(0,-1);
 }
 // console.log(solution8("aaa aaaa aaaaa"))
+
+
+
+// 프로그래머스 | 짝수와 홀수
+// https://programmers.co.kr/learn/courses/30/lessons/12937
+// true : false 사용한 사람도 있었다
+function solution9(num) {
+    return num % 2 == 0 ? "Even" : "Odd";
+}
+console.log(solution9(3))
