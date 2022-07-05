@@ -26,4 +26,23 @@ function solution(array, commands) {
 function solution1(s) {
     return Number(s);
 }
-console.log(solution1("1234"))
+// console.log(solution1("1234"))
+
+
+
+// 프로그래머스 | 문자열 다루기 기본
+// https://programmers.co.kr/learn/courses/30/lessons/12918
+// isNaN(value) => 'Not a Number'의 약자 문자열이 숫자인지 아닌지 판별 : 이거는 e를 숫자로 인식한다 : 4,5번 불통..
+// e가 있어서 음수라서 불통.. 정규표현식 사용...
+// 3번 음수에서 불통...
+function solution2(s) {
+    if (s.length === 4 || s.length === 6) {
+        return s.includes('e') ? false : true;
+    }
+    return false;
+}
+//정규표현식 사용 통과된 풀이
+function solution2(s) {
+    return /^\d{4}$|^\d{6}$/.test(s)
+}
+console.log(solution2("e199"))
