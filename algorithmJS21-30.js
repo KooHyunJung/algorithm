@@ -44,12 +44,17 @@ function solution2(s) {
 function solution2(s) {
     return /^\d{4}$|^\d{6}$/.test(s)
 }
-console.log(solution2("e199"))
+// console.log(solution2("e199"))
 
 
 
 // 프로그래머스 | 음양 더하기
 // https://programmers.co.kr/learn/courses/30/lessons/76501
-function solution3() {
-    
+function solution3(absolutes, signs) {
+    let answer = 0;
+    for (let i = 0; i < absolutes.length; i++) {
+        signs[i] ? answer += absolutes[i] : answer -= absolutes[i];
+    }
+    return answer;
 }
+console.log(solution3([4,7,12], [true,false,true]))
