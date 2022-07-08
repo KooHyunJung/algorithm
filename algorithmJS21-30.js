@@ -57,4 +57,14 @@ function solution3(absolutes, signs) {
     }
     return answer;
 }
-console.log(solution3([4,7,12], [true,false,true]))
+// console.log(solution3([4,7,12], [true,false,true]))
+
+
+
+// 프로그래머스 | 정수 내림차순으로 배치하기
+// https://programmers.co.kr/learn/courses/30/lessons/12933
+function solution4(n) {
+    let answer = Number(n.toString().split("").sort((a,b)=>b-a).join(""));
+    return answer;
+}
+console.log(solution4(118372))
