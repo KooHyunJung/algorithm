@@ -67,4 +67,26 @@ function solution4(n) {
     let answer = Number(n.toString().split("").sort((a,b)=>b-a).join(""));
     return answer;
 }
-console.log(solution4(118372))
+// console.log(solution4(118372))
+
+
+
+// 프로그래머스 | 행렬에 덧셈
+// https://programmers.co.kr/learn/courses/30/lessons/12950
+// 행, 열 길이판별 > 이중반복문 안 배열 > 이중반복문 밖 이차배열 생성 
+function solution5(arr1, arr2) {
+    let answer = [];
+    for (let i= 0; i < arr1.length; i++) {
+        let a = [];
+        for (let j= 0; j < arr1[0].length; j++) {
+            a.push(arr1[i][j] + arr2[i][j]);
+        }
+        answer.push(a)
+    }
+    return answer;
+}
+// 다른 사람 풀이
+function solution5(A, B) {
+    return A.map((a,i) => a.map((b, j) => b + B[i][j]));
+}
+console.log(solution5([[1],[2]], [[3],[4]]))
