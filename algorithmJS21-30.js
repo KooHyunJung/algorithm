@@ -81,7 +81,7 @@ function solution5(arr1, arr2) {
         for (let j= 0; j < arr1[0].length; j++) {
             a.push(arr1[i][j] + arr2[i][j]);
         }
-        answer.push(a)
+        answer.push(a);
     }
     return answer;
 }
@@ -89,4 +89,16 @@ function solution5(arr1, arr2) {
 function solution5(A, B) {
     return A.map((a,i) => a.map((b, j) => b + B[i][j]));
 }
-console.log(solution5([[1],[2]], [[3],[4]]))
+// console.log(solution5([[1],[2]], [[3],[4]]))
+
+
+
+// 프로그래머스 | 튜플
+// https://programmers.co.kr/learn/courses/30/lessons/64065
+// "{{" , "}}" 제거 > },{ 기준으로 배열 생성 > 가장 긴 배열 출력 
+function solution6(s) {
+    let answer = [];
+    let newStr = s.slice(2,-2).split("},{").sort((a,b)=>b-a);
+    return newStr.slice(-1).toString().split(",").map(Number);
+}
+console.log(solution6("{{2},{2,1},{2,1,3},{2,1,3,4}}"))
