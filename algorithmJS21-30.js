@@ -99,6 +99,18 @@ function solution5(A, B) {
 function solution6(s) {
     let answer = [];
     let newStr = s.slice(2,-2).split("},{").sort((a,b)=>b-a);
-    return newStr.slice(-1).toString().split(",").map(Number);
+
+    newStr.forEach(v => {
+        let tuple = v.split(',');
+        answer.push(tuple.find(e => !answer.includes(e)));
+    });
+
+    return answer.map(Number);
 }
 console.log(solution6("{{2},{2,1},{2,1,3},{2,1,3,4}}"))
+
+
+
+
+// 프로그래머스 | H-index
+// https://programmers.co.kr/learn/courses/30/lessons/42747
