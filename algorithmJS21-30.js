@@ -95,7 +95,7 @@ function solution5(A, B) {
 
 // 프로그래머스 | 튜플
 // https://programmers.co.kr/learn/courses/30/lessons/64065
-// "{{" , "}}" 제거 > },{ 기준으로 배열 생성 > 가장 긴 배열 출력 
+// "{{" , "}}" 제거 > },{ 기준으로 배열 생성 > 가장 많은 배열순으로 출력 
 function solution6(s) {
     let answer = [];
     let newStr = s.slice(2,-2).split("},{").sort((a,b)=>b-a);
@@ -114,3 +114,14 @@ console.log(solution6("{{2},{2,1},{2,1,3},{2,1,3,4}}"))
 
 // 프로그래머스 | H-index
 // https://programmers.co.kr/learn/courses/30/lessons/42747
+// 배열 내림차순 정렬 > 내림 오름 비교 > 값 발견 > 출력
+function solution7(citations) {
+    let answer = 0;
+    citations.sort((a,b)=>(b-a))
+    
+    while(answer + 1 <= citations[answer]){
+        answer++;
+    }
+    return answer
+}
+console.log(solution7([3, 0, 6, 1, 5]))
