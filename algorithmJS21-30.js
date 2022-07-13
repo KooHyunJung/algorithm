@@ -107,7 +107,7 @@ function solution6(s) {
 
     return answer.map(Number);
 }
-console.log(solution6("{{2},{2,1},{2,1,3},{2,1,3,4}}"))
+// console.log(solution6("{{2},{2,1},{2,1,3},{2,1,3,4}}"))
 
 
 
@@ -124,4 +124,16 @@ function solution7(citations) {
     }
     return answer
 }
-console.log(solution7([3, 0, 6, 1, 5]))
+// console.log(solution7([3, 0, 6, 1, 5]))
+
+
+
+
+// 프로그래머스 | 문자열 내 p와 y의 개수
+// https://programmers.co.kr/learn/courses/30/lessons/12916
+// 문자열 전체 toLowerCase() > split() 문자열 내 p, y 배열 만들기 > 길이판별
+function solution8(s){
+    let strLower = s.toLowerCase()
+    return strLower.split("p").length === strLower.split("y").length;
+}
+console.log(solution8("pPoooyYy"))
