@@ -136,4 +136,14 @@ function solution8(s){
     let strLower = s.toLowerCase()
     return strLower.split("p").length === strLower.split("y").length;
 }
-console.log(solution8("pPoooyYy"))
+// console.log(solution8("pPoooyYy"))
+
+
+
+// 프로그래머스 | 콜라츠의 추측
+// https://programmers.co.kr/learn/courses/30/lessons/12943
+// 재귀함수 사용 > 짝수와 홀수 나눠 계산 > num==1: break, count==500이라도 num !=1: count = -1
+function solution9(num,count = 0) {
+    return num == 1 ? (count >= 500 ? -1 : count) : solution9(num % 2 == 0 ? num / 2 : num * 3 + 1, ++count);
+}
+console.log(solution9(16));
