@@ -19,3 +19,14 @@ function solution1(participant, completion) {
     }
 }
 console.log(solution1(["leo", "kiki", "eden"], ["eden", "kiki"]))
+
+
+
+// 프로그래머스 | 서울에서 김서방 찾기
+// https://programmers.co.kr/learn/courses/30/lessons/12919
+function solution2(seoul) {
+    const kimIndex = seoul.indexOf("Kim");
+    return `김서방은 ${kimIndex}에 있다`
+}
+console.log(solution2(["Jane", "Kim"]))
+
