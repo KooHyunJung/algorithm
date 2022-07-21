@@ -30,3 +30,13 @@ function solution2(seoul) {
 }
 console.log(solution2(["Jane", "Kim"]))
 
+
+
+// 프로그래머스 | 가장 큰 수
+// https://programmers.co.kr/learn/courses/30/lessons/42746
+function solution3(numbers) {
+    let strNum = numbers.map(num => num + "");
+    const answer = strNum.sort((a, b) => (b + a) - (a + b)).join("");
+    return answer[0] === "0" ? "0" : answer;
+}
+console.log(solution3([6, 10, 2]))
