@@ -40,3 +40,8 @@ function solution3(numbers) {
     return answer[0] === "0" ? "0" : answer;
 }
 console.log(solution3([6, 10, 2]))
+
+
+
+// 프로그래머스 | 예산
+// https://programmers.co.kr/learn/courses/30/lessons/12982
