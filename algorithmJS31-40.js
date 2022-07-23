@@ -45,3 +45,11 @@ console.log(solution3([6, 10, 2]))
 
 // 프로그래머스 | 예산
 // https://programmers.co.kr/learn/courses/30/lessons/12982
+function solution4(d, budget) {
+    d.sort((a, b) => a - b);
+    while (d.reduce((a, b) => (a + b), 0) > budget) {
+    d.pop();
+    }
+    return d.length;
+}
+console.log(solution4([2,2,3,3], 10))
