@@ -53,3 +53,8 @@ function solution4(d, budget) {
     return d.length;
 }
 console.log(solution4([2,2,3,3], 10))
+
+
+
+// 프로그래머스 | 없는 숫자 더하기
+// https://programmers.co.kr/learn/courses/30/lessons/86051
