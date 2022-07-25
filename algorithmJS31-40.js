@@ -5,7 +5,7 @@ function solution(price, money, count) {
     const total = price * count * (count + 1) / 2 - money;
     return total > 0 ? total : 0;
 }
-console.log(solution(3,20,4))
+// console.log(solution(3,20,4))
 
 
 
@@ -18,7 +18,7 @@ function solution1(participant, completion) {
         if(participant[i] !== completion[i]) return participant[i];
     }
 }
-console.log(solution1(["leo", "kiki", "eden"], ["eden", "kiki"]))
+// console.log(solution1(["leo", "kiki", "eden"], ["eden", "kiki"]))
 
 
 
@@ -28,7 +28,7 @@ function solution2(seoul) {
     const kimIndex = seoul.indexOf("Kim");
     return `김서방은 ${kimIndex}에 있다`
 }
-console.log(solution2(["Jane", "Kim"]))
+// console.log(solution2(["Jane", "Kim"]))
 
 
 
@@ -39,7 +39,7 @@ function solution3(numbers) {
     const answer = strNum.sort((a, b) => (b + a) - (a + b)).join("");
     return answer[0] === "0" ? "0" : answer;
 }
-console.log(solution3([6, 10, 2]))
+// console.log(solution3([6, 10, 2]))
 
 
 
@@ -52,9 +52,17 @@ function solution4(d, budget) {
     }
     return d.length;
 }
-console.log(solution4([2,2,3,3], 10))
+// console.log(solution4([2,2,3,3], 10))
 
 
 
 // 프로그래머스 | 없는 숫자 더하기
 // https://programmers.co.kr/learn/courses/30/lessons/86051
+function solution5(numbers) {
+    var answer = 45-numbers.reduce((acc,cur) => acc+cur);
+    return answer;
+}
+function solution5(numbers) {
+    return 45 - numbers.reduce((acc, cur) => acc + cur, 0);
+}
+console.log(solution5([1,2,3,4,6,7,8,0]))
