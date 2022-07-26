@@ -66,3 +66,13 @@ function solution5(numbers) {
     return 45 - numbers.reduce((acc, cur) => acc + cur, 0);
 }
 console.log(solution5([1,2,3,4,6,7,8,0]))
+
+
+
+// 프로그래머스 | 문자열 내 마음대로 정하기
+// https://programmers.co.kr/learn/courses/30/lessons/12915
+function solution6(strings, n) {
+    var answer = [];
+    return answer;
+}
+console.log(solution6(["sun", "bed", "car"], 1))
