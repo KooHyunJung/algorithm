@@ -71,8 +71,24 @@ console.log(solution5([1,2,3,4,6,7,8,0]))
 
 // 프로그래머스 | 문자열 내 마음대로 정하기
 // https://programmers.co.kr/learn/courses/30/lessons/12915
+// sort() => 배열. sort((a, b) =>{});
 function solution6(strings, n) {
-    var answer = [];
-    return answer;
+    strings.sort((a,b)=>{
+        if(a[n] > b[n]) return 1;
+        if(b[n] > a[n]) return -1;
+
+        if(a > b) return 1;
+        if(b > a) return -1;
+
+        return 0;
+    });
+    return strings;
 }
+//다른 사람 풀이
+function solution6(strings, n) {
+    // strings 배열
+    // n 번째 문자열 비교
+    return strings.sort((s1, s2) => s1[n] === s2[n] ? s1.localeCompare(s2) : s1[n].localeCompare(s2[n]));
+}
+
 console.log(solution6(["sun", "bed", "car"], 1))
