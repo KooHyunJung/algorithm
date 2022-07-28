@@ -92,3 +92,8 @@ function solution6(strings, n) {
 }
 
 console.log(solution6(["sun", "bed", "car"], 1))
+
+
+
+// 프로그래머스 | 신고 결과 받기
+// https://programmers.co.kr/learn/courses/30/lessons/92334
