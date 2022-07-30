@@ -129,3 +129,14 @@ function solution7(id_list, report, k) {
     return mail
 }
 console.log(solution7(["muzi", "frodo", "apeach", "neo"], ["muzi frodo","apeach frodo","frodo neo","muzi neo","apeach muzi"], 2))
+
+
+
+
+// 프로그래머스 | 하샤드 수 
+// https://programmers.co.kr/learn/courses/30/lessons/12947
+function solution(x) {
+    var answer = true;
+    return answer;
+}
+console.log(solution6(10))
