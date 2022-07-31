@@ -135,8 +135,22 @@ console.log(solution7(["muzi", "frodo", "apeach", "neo"], ["muzi frodo","apeach 
 
 // 프로그래머스 | 하샤드 수 
 // https://programmers.co.kr/learn/courses/30/lessons/12947
-function solution(x) {
-    var answer = true;
+function solution8(x) {
+    let answer = true;
+    let arr = String(x).split('');
+    let sum = 0
+
+    for(let i = 0; i < arr.length; i++) {
+        sum += Number(arr[i]);
+    }
+
+    if (!(x % sum === 0)) {
+        answer = false;
+    }
     return answer;
 }
-console.log(solution6(10))
+// 다른 사람 풀이
+function Harshad(n){
+    return !(n % (n + "").split("").reduce((a, b) => +b + +a ));
+}
+console.log(solution8(10))
