@@ -49,22 +49,20 @@ def solution2(today, terms, privacies):
 # print(solution2("2022.05.19", ["A 6", "B 12", "C 3"], ["2021.05.02 A", "2021.07.01 B", "2022.02.19 C", "2022.02.20 C"]))
 
 
-def solution3(book_time):
-    booking = [(int(start[:2]) * 60 + int(start[3:]), (int(end[:2]) * 60 + int(end[3:]) + 10)) for start, end in book_time]
-    booking.sort()
-    update = []
-    # [(850, 1170), (860, 930), (900, 1030), (1000, 1110), (1100, 1290)]
+# 프로그래머스 | 뒤에 있는 큰 수 찾기
+# https://school.programmers.co.kr/learn/courses/30/lessons/154539
+from collections import deque
+
+def solution3(numbers):
+    answer = [-1] * len(numbers)
+    stack=deque()
     
-    for start, end in booking:
-        if not update:
-            update.append(end)
-            continue
-        if update[0] <= start:
-            update[0] = end
-        else:
-            update.insert(0, end)
+    for val_index, val in enumerate(numbers):
+        while len(stack) and stack[-1][0] < val:
+            answer[stack[-1][1]] = val
+            stack.pop()
+        stack.append((val,val_index))
+    
+    return answer
 
-        
-    return len(update)
-
-print(solution3([["15:00", "17:00"], ["16:40", "18:20"], ["14:20", "15:20"], ["14:10", "19:20"], ["18:20", "21:20"]]))
+print(solution3([2, 3, 3, 5]))
