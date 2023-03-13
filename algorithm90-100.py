@@ -66,3 +66,40 @@ def solution3(numbers):
     return answer
 
 print(solution3([2, 3, 3, 5]))
+
+
+# 프로그래머스 | 혼자서 하는 틱택토
+# https://school.programmers.co.kr/learn/courses/30/lessons/160585
+"""
+수도코드
+O, X 에 대한 자리값을 저장
+이긴 수 축적하여 마지막 판별해준다
+"""
+def solution4(board):
+    if len(board[0]) > 3 or len(board[1]) > 3 or len(board[2]) > 3:
+        return 0
+    
+    result = {"O": [], "X": []}
+    for num_0, line in enumerate(board):
+        for num_1, val in enumerate(line):
+            if val == "O" or val == "X":
+                result[val].append((num_0*3) + (num_1+1))
+    
+    win_O, win_X = 0, 0
+    if len(result["O"]) < 3:
+        if len(result["O"]) == len(result["X"]) + 1:
+            return 1
+        if len(result["O"]) == len(result["X"]):
+            return 1
+        if len(result["O"]) - len(result["X"]) == 0:
+            return 1
+    else: # len(result["O"]) >= 3:
+        if result["O"][2] - result["O"][1] == result["O"][1] - result["O"][0]:
+            win_O += 1
+        if result["X"][2] - result["X"][1] == result["X"][1] - result["X"][0]:
+            win_X += 1
+            
+    return 0
+
+
+print(solution4(["O.X", ".O.", "..X"]))
