@@ -103,3 +103,35 @@ def solution4(board):
 
 
 print(solution4(["O.X", ".O.", "..X"]))
+
+
+"""
+자료구조 깊이/너비 우선탐색(DFS/BES)
+깊이 우선탐색 스택 - list 그 자체
+너비 우선탐색 큐 - from collections import deque 사용
+"""
+def solution5(numbers, target):
+    answer = 0
+    queue = [[numbers[0],0], [-1*numbers[0],0]]
+    n = len(numbers)
+    while queue:
+        temp, idx = queue.pop()
+        idx += 1
+        if idx < n:
+            queue.append([temp+numbers[idx], idx])
+            queue.append([temp-numbers[idx], idx])
+        else:
+            if temp == target:
+                answer += 1
+    return answer
+
+print(solution5([4, 1, 2, 1], 4))
+
+
+# 다른 사람 풀이( 순혈 조합 )
+from itertools import product
+
+def solution5(numbers, target):
+    l = [(x, -x) for x in numbers]
+    s = list(map(sum, product(*l)))
+    return s.count(target)
