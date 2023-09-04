@@ -135,3 +135,31 @@ def solution5(numbers, target):
     l = [(x, -x) for x in numbers]
     s = list(map(sum, product(*l)))
     return s.count(target)
+
+
+"""
+자료구조 Heap
+"""
+import heapq
+
+def solution6(operations):
+    heap = []
+    for operation in operations:
+        val = operation.split()
+        if "I" == val[0]:
+            heapq.heappush(heap, val[1])
+        elif "D" == val[0] and val[1] == "-1":
+            if heap:
+                heapq.heappop(heap)
+        elif "D" == val[0] and val[1] == "1":
+            if heap:
+                max_val = max(heap)
+                heap.remove(max_val)
+
+    if not heap:
+        return [0, 0]
+    else:
+        return max(heap), heap[0]
+
+
+# print(solution6(["I -45", "I 653", "D 1", "I -642", "I 45", "I 97", "D 1", "D -1", "I 333"]))
