@@ -163,3 +163,26 @@ def solution6(operations):
 
 
 # print(solution6(["I -45", "I 653", "D 1", "I -642", "I 45", "I 97", "D 1", "D -1", "I 333"]))
+
+
+"""
+그리드 알고리즘 Kruskal
+노드 - 간선 최소비용
+"""
+def solution7(n, costs):
+    answer = 0
+    costs.sort(key = lambda x: x[2]) # 비용기준으로 오름차순 정렬
+    connect = set([costs[0][0]]) # 첫번째 노드 담고 시작, 연결된 노드 담김
+    
+    # Kruskal 알고리즘으로 최소 비용 구하기
+    while len(connect) != n:
+        for cost in costs:
+            if cost[0] in connect and cost[1] in connect:
+                continue
+            if cost[0] in connect or cost[1] in connect:
+                connect.update([cost[0], cost[1]])
+                answer += cost[2]
+                break
+    return answer
+
+print(solution7(4, [[0,1,1],[0,2,2],[1,2,5],[1,3,1],[2,3,8]]))
