@@ -186,3 +186,32 @@ def solution7(n, costs):
     return answer
 
 print(solution7(4, [[0,1,1],[0,2,2],[1,2,5],[1,3,1],[2,3,8]]))
+
+
+"""
+자료구조 해시(object)
+"""
+def solution7(genres, plays):
+    answer = []
+
+    dic1 = {}
+    dic2 = {}
+
+    for num, (genre, play) in enumerate(zip(genres, plays)):
+        if genre not in dic1:
+            dic1[genre] = [(num, play)]
+        else:
+            dic1[genre].append((num, play))
+
+        if genre not in dic2:
+            dic2[genre] = play
+        else:
+            dic2[genre] += play
+
+    for (k, v) in sorted(dic2.items(), key=lambda x:x[1], reverse=True):
+        for (i, p) in sorted(dic1[k], key=lambda x:x[1], reverse=True)[:2]:
+            answer.append(i)
+
+    return answer
+
+print(solution7(["classic", "pop", "classic", "classic", "pop"], [500, 600, 150, 800, 2500]))
