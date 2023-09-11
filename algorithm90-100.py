@@ -215,3 +215,40 @@ def solution7(genres, plays):
     return answer
 
 print(solution7(["classic", "pop", "classic", "classic", "pop"], [500, 600, 150, 800, 2500]))
+
+
+"""
+스택 / 큐
+"""
+def solution8(bridge_length, weight, truck_weights):
+    answer = 0
+    trucks_on_bridge = [0] * bridge_length
+    while len(trucks_on_bridge):
+        answer += 1
+        trucks_on_bridge.pop(0)
+        if truck_weights:
+            if sum(trucks_on_bridge) + truck_weights[0] <= weight:
+                trucks_on_bridge.append(truck_weights.pop(0))
+            else:
+                trucks_on_bridge.append(0)
+    return answer
+
+
+from collections import deque
+
+def solution8(bridge_length, weight, truck_weights):
+    answer = 0
+    temp = 0
+    truck_bridge_deque = deque(bridge_length * [0])
+    truck_weights_deque = deque(truck_weights)
+    while len(truck_bridge_deque):
+        answer += 1
+        temp -= truck_bridge_deque[0]
+        truck_bridge_deque.popleft()
+        if truck_weights_deque:
+            if temp + truck_weights_deque[0] <= weight:
+                temp += truck_weights_deque[0]
+                truck_bridge_deque.append(truck_weights_deque.popleft())
+            else:
+                truck_bridge_deque.append(0)
+    return answer
