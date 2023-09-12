@@ -252,3 +252,25 @@ def solution8(bridge_length, weight, truck_weights):
             else:
                 truck_bridge_deque.append(0)
     return answer
+
+
+"""
+네트워크 깊이/너비 우선탐색(DFS/BES)
+"""
+def solution9(n, computers):
+    result = 0
+    node = [0] * n
+    
+    def dfs(pc):
+        node[pc]=1
+        for idx,c in enumerate(computers[pc]):
+            if c and node[idx]==0:
+                dfs(idx)
+                
+    for pc in range(n):
+        if node[pc] == 0:
+            dfs(pc)
+            result+=1
+    return result
+
+# print(solution9(3, [[1, 1, 0], [1, 1, 0], [0, 0, 1]]))
